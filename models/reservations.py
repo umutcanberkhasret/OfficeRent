@@ -3,8 +3,7 @@ from datetime import datetime
 import json
 import os
 
-connect("mongo-dev-db")
-
+connect("test",host='mongodb+srv://ege:ege123@cluster0.smbge.gcp.mongodb.net')
 class User(Document):
     username=StringField(required=True)
     email=EmailField()
@@ -63,5 +62,5 @@ class Reservation(Document):
 
 
 reservations=Reservation(reservation_type="ART",reservation_dates="12.12").save()
-# try:
-#     room1=Rooms.objects()
+
+Reservation.objects()
